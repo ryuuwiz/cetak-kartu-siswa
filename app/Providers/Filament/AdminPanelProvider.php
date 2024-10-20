@@ -6,7 +6,6 @@ use Filament\FontProviders\GoogleFontProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Infolists\Components\Section;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -25,6 +24,10 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->spa()
+            ->favicon(asset('images/favicon.png'))
+            ->brandLogo(asset('images/logo.png'))
+            ->brandLogoHeight('3rem')
             ->font('Inter', provider: GoogleFontProvider::class)
             ->default()
             ->id('admin')
