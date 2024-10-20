@@ -9,6 +9,9 @@ class KartuSiswa extends Model
 {
     use HasFactory;
 
+    protected $table = 'kartu_siswa';
+    protected $primaryKey = 'id_kartu_siswa';
+
     protected $fillable = [
         'image',
     ];

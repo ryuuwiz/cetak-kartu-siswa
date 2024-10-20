@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kartu_siswa', function (Blueprint $table) {
             $table->id('id_kartu_siswa');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kartu_siswas');
+        Schema::dropIfExists('kartu_siswa');
     }
 };

@@ -25,6 +25,7 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->spa()
+            ->breadcrumbs(false)
             ->favicon(asset('images/favicon.png'))
             ->brandLogo(asset('images/logo.png'))
             ->brandLogoHeight('3rem')

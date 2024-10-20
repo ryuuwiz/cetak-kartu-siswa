@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\KartuSiswa;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,8 +18,12 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+        ]);
+
+        DB::table('kartu_siswa')->insert([
+            'image' => ''
         ]);
     }
 }
