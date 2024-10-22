@@ -9,7 +9,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class KartuSiswaResource extends Resource
 {
@@ -40,7 +39,10 @@ class KartuSiswaResource extends Resource
         return $table
             ->paginated(false)
             ->columns([
-                Tables\Columns\ImageColumn::make('image')->disk('public')->width(750)->height(243)
+                Tables\Columns\ImageColumn::make('image')
+                    ->disk('public')
+                    ->width(750)->height(243)
+                    ->defaultImageUrl(url('/images/kpel.png')),
             ])
             ->filters([])
             ->actions([
