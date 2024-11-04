@@ -30,7 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->favicon(asset('images/favicon.png'))
             ->brandLogo(asset('images/logo.png'))
             ->brandLogoHeight('3rem')
-            ->font('Inter', provider: GoogleFontProvider::class)
+            ->font('Poppins', provider: GoogleFontProvider::class)
             ->default()
             ->id('admin')
             ->path('admin')

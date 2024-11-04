@@ -18,6 +18,7 @@ class DesainKartuResource extends Resource
 
     protected static ?string $slug = 'desain-kartu';
 
+    protected static ?string $navigationGroup = 'Kartu';
     public static function canCreate(): bool
     {
         $data = DesainKartu::query()->first();
