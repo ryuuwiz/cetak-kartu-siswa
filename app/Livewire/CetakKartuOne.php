@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\DesainKartu;
+use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 
@@ -21,6 +22,7 @@ class CetakKartuOne extends Component
         $this->row->tgl_lhr = \Carbon\Carbon::parse($this->row->tgl_lhr)->format('d-m-Y');
     }
 
+    #[Title("Cetak Kartu Satu")]
     public function render()
     {
         return view('livewire.cetak-kartu-one');
