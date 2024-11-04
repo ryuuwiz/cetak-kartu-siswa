@@ -13,4 +13,6 @@ class DesainKartu extends Model
     protected $fillable = [
         'gambar',
     ];
+
+    public $timestamps = false;
 }

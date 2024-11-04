@@ -16,6 +16,8 @@ class DesainKartuResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
 
+    protected static ?string $slug = 'desain-kartu';
+
     public static function canCreate(): bool
     {
         $data = DesainKartu::query()->first();

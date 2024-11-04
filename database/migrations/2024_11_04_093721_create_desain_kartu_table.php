@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('desain_kartu', function (Blueprint $table) {
             $table->id();
             $table->string('gambar');
-            $table->timestamps();
         });
     }
 
