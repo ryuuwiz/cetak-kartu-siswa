@@ -61,9 +61,8 @@ class SiswaResource extends Resource
                     ->image()
                     ->downloadable(true)
                     ->openable(true)
-                    ->disk('local')
-                    ->directory('siswa')
-                    ->visibility('private'),
+                    ->disk('public')
+                    ->directory('siswa'),
             ]);
     }
 
@@ -101,9 +100,8 @@ class SiswaResource extends Resource
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('foto')
                     ->label("Foto")
-                    ->disk('local')
+                    ->disk('public')
                     ->label('Foto')
-                    ->visibility('private')
                     ->width('100px')
                     ->height('100px'),
             ])

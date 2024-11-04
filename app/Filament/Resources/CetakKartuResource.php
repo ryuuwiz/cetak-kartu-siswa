@@ -8,6 +8,7 @@ use App\Models\Siswa;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 
@@ -71,15 +72,18 @@ class CetakKartuResource extends Resource
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('foto')
                     ->label("Foto")
-                    ->disk('local')
+                    ->disk('public')
                     ->label('Foto')
-                    ->visibility('private')
                     ->width('100px')
                     ->height('100px'),
             ])
             ->filters([
             ])
             ->actions([
+                Action::make('Cetak')
+                    ->icon('heroicon-o-printer')
+                    ->color('primary')
+                    ->url(fn ($record) => route('cetak-kartu-one', ['id' => $record->id]))
             ])
             ->bulkActions([
             ]);

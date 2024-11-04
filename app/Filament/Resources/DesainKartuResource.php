@@ -34,11 +34,9 @@ class DesainKartuResource extends Resource
             ->schema([
                 Forms\Components\FileUpload::make('gambar')
                     ->image()
+                    ->disk('public')
                     ->downloadable(true)
-                    ->openable(true)
-                    ->disk('local')
-                    ->directory('desain-kartu')
-                    ->visibility('private'),
+                    ->openable(true),
             ]);
     }
 
@@ -49,9 +47,8 @@ class DesainKartuResource extends Resource
             ->searchable(false)
             ->columns([
                 Tables\Columns\ImageColumn::make('gambar')
-                    ->disk('local')
+                    ->disk('public')
                     ->label('')
-                    ->visibility('private')
                     ->limit(1)
                     ->width('750px')
                     ->height('243px'),
