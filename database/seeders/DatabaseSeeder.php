@@ -16,14 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
-        ]);
-
-        DB::table('kartu_siswa')->insert([
-            'image' => ''
-        ]);
+//
+//        User::factory()->create([
+//            'name' => 'Admin',
+//            'email' => 'admin@admin.com',
+//        ]);
     }
 }
