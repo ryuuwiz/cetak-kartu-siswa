@@ -23,7 +23,7 @@ class CetakKartuOne extends Component
     }
 
     #[Title("Cetak Kartu Satu")]
-    public function render()
+    public function render(): \Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\View\View
     {
         return view('livewire.cetak-kartu-one');
     }
