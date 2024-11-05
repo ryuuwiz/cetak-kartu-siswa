@@ -23,9 +23,10 @@
     }
 </style>
 
-<div id="card" style="font-size: 12px;margin-top:0;position:absolute;">
+<div style="font-size: 12px;margin-top:0;position:absolute;">
+    @foreach ($siswa as $row)
     <div style="width: 750px; height: 243px; margin-bottom:11px; background-image: url({{ asset("storage/".$kartu->gambar) }})">
-        <img style="border: 1px solid #ffffff;position: absolute;margin-left: 21px;margin-top: 75px;" src="{{ asset("storage/".$row->foto)  }}" width="78.5px" height="110px">
+        <img style="border: 1px solid #ffffff;position: absolute;margin-left: 21px;margin-top: 75px;" src="{{ asset("storage/".$row->foto)  }}" width="78.5px" height="110px" alt="">
         <table style="margin-top: 88px; position: absolute; left:205px; text-align: left; font-family: Cambria,sans-serif;font-size: 12px;">
             <div style="padding-top: 0;">
                 <tr>
@@ -54,6 +55,7 @@
             </div>
         </table>
     </div>
+        @endforeach
 </div>
 
 @script
