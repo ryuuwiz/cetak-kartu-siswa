@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('jk', 10);
             $table->string('email', 50);
             $table->string('alamat', 255);
-            $table->string('no_telp', 15);
+            $table->string('no_telp', 255);
             $table->string('foto');
         });
     }
