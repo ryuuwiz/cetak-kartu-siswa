@@ -46,6 +46,8 @@ services:
       - "9000:9000"
     volumes:
       - .:/var/www/html:delegated
+    depends_on:
+      - mysql
     networks:
       - laravel
 
@@ -63,6 +65,8 @@ services:
     entrypoint: [ 'composer', '--ignore-platform-reqs' ]
     networks:
       - laravel
+    command: >
+      sh -c "composer install --no-interaction --prefer-dist --optimize-autoloader"
 
   npm:
     image: node:current-alpine
@@ -76,6 +80,9 @@ services:
     entrypoint: [ 'npm' ]
     networks:
       - laravel
+    command: >
+      sh -c "npm install"
+      sh -c "npm run build"
 
   artisan:
     build:
@@ -91,3 +98,8 @@ services:
     entrypoint: [ 'php', '/var/www/html/artisan' ]
     networks:
       - laravel
+    command: >
+      sh -c "php artisan migrate"
+      sh -c "php artisan db:seed"
+      sh -c "php artisan storage:link"
+
