@@ -24,3 +24,6 @@ yarn-error.log
 **/caddy
 frankenphp
 frankenphp-worker.php
+
+composer.lock
+package-lock.json
