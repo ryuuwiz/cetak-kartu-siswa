@@ -25,6 +25,9 @@ RUN echo "php_admin_flag[log_errors] = on" >> /usr/local/etc/php-fpm.d/www.conf
 RUN apk add --no-cache \
     icu-dev \
     libintl \
+    libzip-dev \
+    zip \
+    && docker-php-ext-configure zip \
     && docker-php-ext-install pdo pdo_mysql intl zip
 
 USER laravel
