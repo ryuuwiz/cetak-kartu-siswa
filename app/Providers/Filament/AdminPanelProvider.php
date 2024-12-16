@@ -24,8 +24,6 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->darkMode(false)
-            ->breadcrumbs(false)
             ->favicon(asset('images/favicon.png'))
             ->brandLogo(asset('images/logo.png'))
             ->brandLogoHeight('3rem')

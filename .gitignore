@@ -20,3 +20,10 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+
+**/caddy
+frankenphp
+frankenphp-worker.php
+
+composer.lock
+package-lock.json
