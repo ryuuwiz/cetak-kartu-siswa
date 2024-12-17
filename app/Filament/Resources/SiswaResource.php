@@ -61,8 +61,7 @@ class SiswaResource extends Resource
                     ->image()
                     ->downloadable(true)
                     ->openable(true)
-                    ->disk('public')
-                    ->directory('siswa'),
+                    ->disk('public'),
             ]);
     }
 
@@ -111,11 +110,7 @@ class SiswaResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
-            ->bulkActions([
-//                Tables\Actions\BulkActionGroup::make([
-//                    Tables\Actions\DeleteBulkAction::make(),
-//                ]),
-            ]);
+            ->bulkActions([]);
     }
 
     public static function getRelations(): array
