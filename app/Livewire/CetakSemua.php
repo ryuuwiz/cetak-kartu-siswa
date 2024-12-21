@@ -11,6 +11,7 @@ class CetakSemua extends Component
 {
     public $kartu;
     public $siswa;
+
     public function mount(): void
     {
         $this->kartu = DesainKartu::query()->first();
