@@ -22,7 +22,7 @@ class CetakKartuResource extends Resource
 
     public static function canCreate(): bool
     {
-       return false;
+        return false;
     }
 
     public static function canEdit(Model $record): bool
@@ -34,8 +34,7 @@ class CetakKartuResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-            ]);
+            ->schema([]);
     }
 
     public static function table(Table $table): Table
@@ -77,22 +76,19 @@ class CetakKartuResource extends Resource
                     ->width('100px')
                     ->height('100px'),
             ])
-            ->filters([
-            ])
+            ->filters([])
             ->actions([
                 Action::make('Cetak')
                     ->icon('heroicon-o-printer')
                     ->color('primary')
-                    ->url(fn ($record) => route('cetak-kartu-one', ['id' => $record->id]))
+                    ->url(fn($record) => route('cetak-kartu-one', ['id' => $record->id]))
             ])
-            ->bulkActions([
-            ]);
+            ->bulkActions([]);
     }
 
     public static function getRelations(): array
     {
-        return [
-        ];
+        return [];
     }
 
     public static function getPages(): array

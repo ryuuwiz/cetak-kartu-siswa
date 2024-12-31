@@ -17,21 +17,22 @@ class SiswaFactory extends Factory
      * @return array<string, mixed>
      */
     protected $model = Siswa::class;
+
     public function definition(): array
     {
         $images = [
-            'profile1.jpg',
-            'profile2.jpg',
-            'profile3.jpg',
-            'profile4.jpg',
+            'user1.jpg',
+            'user2.jpg',
+            'user3.jpg',
         ];
 
         $randomImage = $this->faker->randomElement($images);
-        $sourcePath = storage_path('app/public/siswa/'.$randomImage);
+
+        $sourcePath = public_path('images/' . $randomImage);
 
         if (file_exists($sourcePath)) {
             $image = file_get_contents($sourcePath);
-            Storage::disk('public')->put('siswa/'.$randomImage, $image);
+            Storage::disk('public')->put($randomImage, $image);
         }
 
         return [
@@ -44,7 +45,7 @@ class SiswaFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'alamat' => $this->faker->address(),
             'no_telp' => $this->faker->phoneNumber(),
-            'foto' => 'siswa/'.$randomImage,
+            'foto' => $randomImage,
         ];
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\SiswaResource\Pages;
-use App\Filament\Resources\SiswaResource\RelationManagers;
 use App\Models\Siswa;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -61,8 +60,7 @@ class SiswaResource extends Resource
                     ->image()
                     ->downloadable(true)
                     ->openable(true)
-                    ->disk('public')
-                    ->directory('siswa'),
+                    ->disk('public'),
             ]);
     }
 
@@ -111,11 +109,7 @@ class SiswaResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
-            ->bulkActions([
-//                Tables\Actions\BulkActionGroup::make([
-//                    Tables\Actions\DeleteBulkAction::make(),
-//                ]),
-            ]);
+            ->bulkActions([]);
     }
 
     public static function getRelations(): array

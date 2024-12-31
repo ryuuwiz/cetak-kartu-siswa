@@ -53,13 +53,11 @@ class DesainKartuResource extends Resource
                     ->width('750px')
                     ->height('243px'),
             ])
-            ->filters([
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
-            ->bulkActions([
-            ]);
+            ->bulkActions([]);
     }
 
     public static function getRelations(): array
