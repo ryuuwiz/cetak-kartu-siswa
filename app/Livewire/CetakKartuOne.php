@@ -17,7 +17,7 @@ class CetakKartuOne extends Component
 
     public function mount(): void
     {
-        $this->kartu = DesainKartu::query()->first();
+        $this->kartu = DesainKartu::first();
         $this->row = \App\Models\Siswa::query()->findOrFail(id: $this->id);
         $this->row->tgl_lhr = \Carbon\Carbon::parse($this->row->tgl_lhr)->format('d-m-Y');
     }
