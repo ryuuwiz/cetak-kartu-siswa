@@ -8,6 +8,8 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Table;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use pxlrbt\FilamentExcel\Columns\Column;
@@ -107,13 +109,21 @@ class SiswaResource extends Resource
                     ->height('100px'),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('jk')
+                    ->label('Jenis Kelamin')
+                    ->options([
+                        'Laki-Laki' => 'Laki-laki',
+                        'Perempuan' => 'Perempuan',
+                    ])
+                    ->attribute('jk')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
-                ExportBulkAction::make()
+                ExportBulkAction::make(),
+                DeleteBulkAction::make()
             ]);
     }
 
