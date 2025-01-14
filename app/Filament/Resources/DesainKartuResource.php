@@ -48,7 +48,7 @@ class DesainKartuResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('gambar')
                     ->disk('public')
-                    ->label('')
+                    ->label('Gambar Desain Kartu')
                     ->limit(1)
                     ->width('750px')
                     ->height('243px'),
